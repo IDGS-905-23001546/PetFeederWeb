@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PawFeeder App</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+<body>
+
+<div class="phone-wrapper">
+    <div class="phone-shell">
+        <div class="phone-screen">
+
+            <!-- Notch -->
+            <div class="phone-notch"></div>
+
+            <!-- Status bar -->
+            <div class="phone-statusbar">
+                <span>9:41</span>
+                <span></span>
+                <span>••• 100%</span>
+            </div>
+
+            <!-- Page title -->
+            @if (ViewData["AppTitle"] != null)
+            {
+                <div class="px-4 pb-2" style="flex-shrink:0;">
+                    <h1 class="fw-bold fs-4 mb-0">@ViewData["AppTitle"]</h1>
+                </div>
+            }
+
+            <!-- Content -->
+            <div class="phone-content">
+                @RenderBody()
+            </div>
+
+            <!-- Bottom nav -->
+            <nav class="phone-bottomnav">
+                @{
+                    var currentPath = ViewContext.HttpContext.Request.Path.Value ?? "";
+                }
+                <a asp-controller="App" asp-action="Index"
+                   class="phone-nav-item @(currentPath == "/App" || currentPath == "/App/Index" || currentPath == "/" ? "active" : "")">
+                    <i class="bi bi-house-door-fill"></i>
+                    <span class="phone-label">Inicio</span>
+                </a>
+                <a asp-controller="App" asp-action="Pets"
+                   class="phone-nav-item @(currentPath.StartsWith("/App/Pets") ? "active" : "")">
+                    <i class="bi bi-heart-fill"></i>
+                    <span class="phone-label">Mascotas</span>
+                </a>
+                <a asp-controller="App" asp-action="Schedules"
+                   class="phone-nav-item @(currentPath.StartsWith("/App/Schedules") ? "active" : "")">
+                    <i class="bi bi-calendar3"></i>
+                    <span class="phone-label">Horarios</span>
+                </a>
+                <a asp-controller="App" asp-action="Device"
+                   class="phone-nav-item @(currentPath.StartsWith("/App/Device") ? "active" : "")">
+                    <i class="bi bi-wifi"></i>
+                    <span class="phone-label">Equipo</span>
+                </a>
+                <a asp-controller="App" asp-action="Profile"
+                   class="phone-nav-item @(currentPath.StartsWith("/App/Profile") ? "active" : "")">
+                    <i class="bi bi-person-circle"></i>
+                    <span class="phone-label">Perfil</span>
+                </a>
+            </nav>
+
+        </div>
+    </div>
+
+    <!-- Side label (solo desktop) -->
+    <div class="d-none d-xl-block ms-5" style="width:11rem;">
+        <div class="text-muted small text-uppercase fw-bold tracking-wide mb-2" style="letter-spacing:.08em;font-size:.7rem;">Diseño UI</div>
+        <p class="text-muted small">Prototipo móvil para PawFeeder — dispensador inteligente IoT.</p>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

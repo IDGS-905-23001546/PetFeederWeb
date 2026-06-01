@@ -1,0 +1,111 @@
+@{
+    ViewData["Title"] = "App - Mascotas";
+    ViewData["AppTitle"] = "Mascotas";
+    Layout = "_AppLayout";
+}
+
+<div class="px-4 py-3">
+
+    <!-- Agregar mascota -->
+    <button class="btn-pf w-100 py-2 mb-4 rounded-3">
+        <i class="bi bi-plus-lg me-2"></i>Agregar mascota
+    </button>
+
+    <!-- Lista de mascotas -->
+    <div class="d-flex flex-column gap-3">
+
+        <!-- Mascota 1 -->
+        <div class="pf-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                     style="width:3.5rem;height:3.5rem;background:var(--pf-primary-light);font-size:1.6rem;">
+                    🐕
+                </div>
+                <div class="flex-grow-1">
+                    <h6 class="fw-bold mb-0">Buddy</h6>
+                    <p class="text-muted small mb-0">Golden Retriever</p>
+                </div>
+                <button class="btn p-1">
+                    <i class="bi bi-pencil small text-muted"></i>
+                </button>
+            </div>
+            <div class="row g-2 text-center">
+                <div class="col-4">
+                    <div class="pf-stat">
+                        <div class="fw-bold small" style="color:var(--pf-primary);">12 kg</div>
+                        <div class="text-muted" style="font-size:.65rem;">Peso</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="pf-stat">
+                        <div class="fw-bold small" style="color:var(--pf-primary);">2 años</div>
+                        <div class="text-muted" style="font-size:.65rem;">Edad</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="pf-stat">
+                        <div class="fw-bold small" style="color:var(--pf-primary);">80g</div>
+                        <div class="text-muted" style="font-size:.65rem;">Por comida</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 d-flex gap-2">
+                <div class="flex-grow-1" style="height:.5rem;background:var(--pf-border);border-radius:9999px;overflow:hidden;">
+                    <div style="width:60%;height:100%;background:var(--pf-primary);border-radius:9999px;"></div>
+                </div>
+                <span class="text-muted" style="font-size:.7rem;">60% diario</span>
+            </div>
+        </div>
+
+        <!-- Mascota 2 -->
+        <div class="pf-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                     style="width:3.5rem;height:3.5rem;background:#fef3c7;font-size:1.6rem;">
+                    🐈
+                </div>
+                <div class="flex-grow-1">
+                    <h6 class="fw-bold mb-0">Mila</h6>
+                    <p class="text-muted small mb-0">Siamés</p>
+                </div>
+                <button class="btn p-1">
+                    <i class="bi bi-pencil small text-muted"></i>
+                </button>
+            </div>
+            <div class="row g-2 text-center">
+                <div class="col-4">
+                    <div class="pf-stat">
+                        <div class="fw-bold small" style="color:var(--pf-primary);">4 kg</div>
+                        <div class="text-muted" style="font-size:.65rem;">Peso</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="pf-stat">
+                        <div class="fw-bold small" style="color:var(--pf-primary);">3 años</div>
+                        <div class="text-muted" style="font-size:.65rem;">Edad</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="pf-stat">
+                        <div class="fw-bold small" style="color:var(--pf-primary);">40g</div>
+                        <div class="text-muted" style="font-size:.65rem;">Por comida</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 d-flex gap-2">
+                <div class="flex-grow-1" style="height:.5rem;background:var(--pf-border);border-radius:9999px;overflow:hidden;">
+                    <div style="width:40%;height:100%;background:#f59e0b;border-radius:9999px;"></div>
+                </div>
+                <span class="text-muted" style="font-size:.7rem;">40% diario</span>
+            </div>
+        </div>
+
+        <!-- Agregar más -->
+        <div class="pf-card d-flex align-items-center justify-content-center gap-3 py-3"
+             style="border:2px dashed var(--pf-border);background:transparent;cursor:pointer;">
+            <i class="bi bi-plus-circle fs-5 text-muted"></i>
+            <span class="text-muted small">Agregar otra mascota</span>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PawFeeder</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="pf-header">
+    <div class="container-xl d-flex align-items-center justify-content-between" style="height:4rem;">
+        <a asp-controller="Home" asp-action="Index" class="d-flex align-items-center gap-2 text-decoration-none">
+            <img src="~/images/pawfeeder-mark.png" alt="PawFeeder" style="height:2.2rem;width:2.2rem;object-fit:contain;" />
+            <span class="pf-logo-text fs-5">
+                <span class="paw">Paw</span><span class="feeder">Feeder</span>
+            </span>
+        </a>
+
+        <nav class="d-none d-md-flex align-items-center gap-1">
+            <a asp-controller="Home" asp-action="Index" class="pf-nav-link">Inicio</a>
+            <a asp-controller="Home" asp-action="About" class="pf-nav-link">Proyecto</a>
+            <a asp-controller="Home" asp-action="Manual" class="pf-nav-link">Manual</a>
+            <a asp-controller="Home" asp-action="Contact" class="pf-nav-link">Contacto</a>
+        </nav>
+
+        <div class="d-none d-md-flex align-items-center gap-2">
+            <a asp-controller="Account" asp-action="Login" class="pf-nav-link">Iniciar sesión</a>
+            <a asp-controller="Account" asp-action="Register" class="btn-pf text-decoration-none">
+                <i class="bi bi-download me-1"></i>Obtener app
+            </a>
+        </div>
+
+        <button class="btn d-md-none p-1" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+            <i class="bi bi-list fs-4"></i>
+        </button>
+    </div>
+
+    <div class="collapse d-md-none border-top bg-white" id="mobileMenu">
+        <div class="container py-3 d-flex flex-column gap-1">
+            <a asp-controller="Home" asp-action="Index" class="pf-nav-link">Inicio</a>
+            <a asp-controller="Home" asp-action="About" class="pf-nav-link">Proyecto</a>
+            <a asp-controller="Home" asp-action="Manual" class="pf-nav-link">Manual</a>
+            <a asp-controller="Home" asp-action="Contact" class="pf-nav-link">Contacto</a>
+            <div class="d-flex gap-2 pt-2">
+                <a asp-controller="Account" asp-action="Login" class="btn-pf-outline text-decoration-none text-center flex-fill">Iniciar sesión</a>
+                <a asp-controller="Account" asp-action="Register" class="btn-pf text-decoration-none text-center flex-fill">Registrarse</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ── Main ── -->
+<main>
+    @RenderBody()
+</main>
+
+<!-- ── Footer ── -->
+<footer class="pf-footer">
+    <div class="container-xl py-5">
+        <div class="row g-4">
+            <div class="col-md-5">
+                <a asp-controller="Home" asp-action="Index" class="d-flex align-items-center gap-2 text-decoration-none mb-3">
+                    <img src="~/images/pawfeeder-mark.png" alt="PawFeeder" style="height:2.5rem;width:2.5rem;object-fit:contain;" />
+                    <span class="pf-logo-text fs-4"><span class="paw">Paw</span><span class="feeder">Feeder</span></span>
+                </a>
+                <p class="text-muted small" style="max-width:320px;">
+                    Dispensador inteligente de croquetas IoT. Alimentación precisa, programada y a distancia para el bienestar de tu mascota.
+                </p>
+                <div class="d-flex gap-2 mt-3">
+                    <a href="#" class="pf-social"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="pf-social"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="pf-social"><i class="bi bi-github"></i></a>
+                    <a href="mailto:contacto@pawfeeder.mx" class="pf-social"><i class="bi bi-envelope"></i></a>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <h6 class="fw-bold mb-3">Producto</h6>
+                <ul class="list-unstyled d-flex flex-column gap-2">
+                    <li><a asp-controller="Home" asp-action="About" class="pf-footer-link">Sobre el proyecto</a></li>
+                    <li><a asp-controller="Home" asp-action="Manual" class="pf-footer-link">Manual de uso</a></li>
+                    <li><a asp-controller="Home" asp-action="Index" class="pf-footer-link">Funciones</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-4">
+                <h6 class="fw-bold mb-3">Cuenta</h6>
+                <ul class="list-unstyled d-flex flex-column gap-2">
+                    <li><a asp-controller="Account" asp-action="Login" class="pf-footer-link">Iniciar sesión</a></li>
+                    <li><a asp-controller="Account" asp-action="Register" class="pf-footer-link">Registrarse</a></li>
+                    <li><a asp-controller="Home" asp-action="Contact" class="pf-footer-link">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="border-top py-4 text-center text-muted small">
+        &copy; @DateTime.Now.Year PawFeeder &middot; Proyecto IoT con Arduino &middot; Hecho con 🐾
+    </div>
+</footer>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

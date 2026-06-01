@@ -1,0 +1,92 @@
+@{
+    ViewData["Title"] = "App - Perfil";
+    ViewData["AppTitle"] = "Perfil";
+    Layout = "_AppLayout";
+}
+
+<div class="px-4 py-3">
+
+    <!-- Avatar y datos -->
+    <div class="text-center mb-4">
+        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
+             style="width:5rem;height:5rem;background:var(--pf-primary-light);font-size:2.5rem;">
+            🧑
+        </div>
+        <h5 class="fw-bold mb-0">Carlos Ríos</h5>
+        <p class="text-muted small mb-2">carlosriosrmz17@gmail.com</p>
+        <span class="pf-badge">Plan Gratuito</span>
+    </div>
+
+    <!-- Estadísticas -->
+    <div class="row g-3 mb-4">
+        <div class="col-4">
+            <div class="pf-stat text-center">
+                <div class="fw-bold" style="color:var(--pf-primary);">2</div>
+                <div class="text-muted" style="font-size:.65rem;">Mascotas</div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="pf-stat text-center">
+                <div class="fw-bold" style="color:var(--pf-primary);">4</div>
+                <div class="text-muted" style="font-size:.65rem;">Horarios</div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="pf-stat text-center">
+                <div class="fw-bold" style="color:var(--pf-primary);">28</div>
+                <div class="text-muted" style="font-size:.65rem;">Días activo</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Opciones de cuenta -->
+    <h6 class="fw-bold mb-3">Mi cuenta</h6>
+    <div class="pf-card mb-4">
+        <div class="d-flex flex-column">
+            @foreach (var (icon, label) in new[] {
+                ("person", "Editar perfil"),
+                ("lock", "Cambiar contraseña"),
+                ("bell", "Notificaciones"),
+                ("phone", "Dispositivos vinculados"),
+            })
+            {
+                <button class="btn d-flex align-items-center gap-3 text-start py-3 border-bottom" style="color:var(--pf-dark);">
+                    <div class="rounded-2 d-flex align-items-center justify-content-center"
+                         style="width:2.1rem;height:2.1rem;background:var(--pf-primary-light);">
+                        <i class="bi bi-@icon" style="color:var(--pf-primary);font-size:.9rem;"></i>
+                    </div>
+                    <span class="flex-grow-1 small fw-semibold">@label</span>
+                    <i class="bi bi-chevron-right text-muted small"></i>
+                </button>
+            }
+        </div>
+    </div>
+
+    <!-- Soporte -->
+    <h6 class="fw-bold mb-3">Soporte</h6>
+    <div class="pf-card mb-4">
+        <div class="d-flex flex-column">
+            @foreach (var (icon, label) in new[] {
+                ("book", "Manual de uso"),
+                ("chat-dots", "Contactar soporte"),
+                ("info-circle", "Acerca de PawFeeder"),
+            })
+            {
+                <button class="btn d-flex align-items-center gap-3 text-start py-3 border-bottom" style="color:var(--pf-dark);">
+                    <div class="rounded-2 d-flex align-items-center justify-content-center"
+                         style="width:2.1rem;height:2.1rem;background:var(--pf-border);">
+                        <i class="bi bi-@icon" style="color:var(--pf-muted);font-size:.9rem;"></i>
+                    </div>
+                    <span class="flex-grow-1 small fw-semibold">@label</span>
+                    <i class="bi bi-chevron-right text-muted small"></i>
+                </button>
+            }
+        </div>
+    </div>
+
+    <!-- Cerrar sesión -->
+    <button class="btn w-100 py-2 rounded-3 border" style="color:#ef4444;border-color:#fecaca;">
+        <i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión
+    </button>
+
+</div>

@@ -1,0 +1,81 @@
+@{
+    ViewData["Title"] = "App - Equipo";
+    ViewData["AppTitle"] = "Equipo";
+    Layout = "_AppLayout";
+}
+
+<div class="px-4 py-3">
+
+    <!-- Imagen del dispositivo -->
+    <div class="text-center mb-4">
+        <img src="~/images/web-hero.jpg" alt="PawFeeder" class="rounded-3"
+             style="width:100%;max-height:180px;object-fit:cover;" />
+    </div>
+
+    <!-- Estado principal -->
+    <div class="pf-card mb-3" style="background:linear-gradient(135deg,#16a34a,#22c55e);border:none;color:#fff;">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="fw-bold mb-0">PawFeeder #001</h6>
+            <span class="badge rounded-pill" style="background:rgba(255,255,255,0.25);">
+                <i class="bi bi-wifi me-1"></i>Conectado
+            </span>
+        </div>
+        <div class="small opacity-75">Última actividad: hace 5 minutos</div>
+    </div>
+
+    <!-- Métricas del sensor -->
+    <div class="row g-3 mb-4">
+        <div class="col-6">
+            <div class="pf-card text-center">
+                <div class="fs-2 mb-1">🌾</div>
+                <div class="fw-bold fs-5" style="color:var(--pf-primary);">72%</div>
+                <div class="text-muted small">Nivel de croqueta</div>
+                <div class="mt-2" style="height:.4rem;background:var(--pf-border);border-radius:9999px;overflow:hidden;">
+                    <div style="width:72%;height:100%;background:var(--pf-primary);border-radius:9999px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="pf-card text-center">
+                <div class="fs-2 mb-1">🔋</div>
+                <div class="fw-bold fs-5" style="color:#3b82f6;">USB</div>
+                <div class="text-muted small">Alimentación</div>
+                <div class="mt-2" style="height:.4rem;background:var(--pf-border);border-radius:9999px;overflow:hidden;">
+                    <div style="width:100%;height:100%;background:#3b82f6;border-radius:9999px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info técnica -->
+    <h6 class="fw-bold mb-3">Información del dispositivo</h6>
+    <div class="pf-card mb-4">
+        <div class="d-flex flex-column gap-2">
+            @foreach (var (label, value) in new[] {
+                ("Modelo", "PawFeeder v1.0"),
+                ("Microcontrolador", "Arduino UNO + ESP8266"),
+                ("Firmware", "v2.1.4"),
+                ("Dirección IP", "192.168.1.105"),
+                ("Señal WiFi", "-62 dBm (Buena)"),
+                ("Protocolo", "MQTT / HTTP REST"),
+            })
+            {
+                <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
+                    <span class="text-muted small">@label</span>
+                    <span class="fw-semibold small">@value</span>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Acciones -->
+    <div class="d-flex flex-column gap-2">
+        <button class="btn-pf-outline w-100 py-2 rounded-3">
+            <i class="bi bi-arrow-repeat me-2"></i>Reiniciar dispositivo
+        </button>
+        <button class="btn w-100 py-2 rounded-3 border" style="color:#ef4444;border-color:#fecaca;">
+            <i class="bi bi-wifi-off me-2"></i>Reconfigurar WiFi
+        </button>
+    </div>
+
+</div>

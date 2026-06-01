@@ -1,0 +1,69 @@
+@{
+    ViewData["Title"] = "App - Horarios";
+    ViewData["AppTitle"] = "Horarios";
+    Layout = "_AppLayout";
+}
+
+<div class="px-4 py-3">
+
+    <!-- Botón nuevo horario -->
+    <button class="btn-pf w-100 py-2 mb-4 rounded-3">
+        <i class="bi bi-plus-lg me-2"></i>Nuevo horario
+    </button>
+
+    <!-- Resumen diario -->
+    <div class="pf-card mb-4" style="background:var(--pf-primary-light);border-color:var(--pf-primary);">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <p class="text-muted small mb-0">Total hoy</p>
+                <h5 class="fw-bold mb-0" style="color:var(--pf-primary-dark);">3 comidas · 240g</h5>
+            </div>
+            <div class="rounded-circle d-flex align-items-center justify-content-center"
+                 style="width:3rem;height:3rem;background:var(--pf-primary);color:#fff;font-size:1.1rem;">
+                <i class="bi bi-check2-all"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lista de horarios -->
+    <h6 class="fw-bold mb-3">Horarios activos</h6>
+    <div class="d-flex flex-column gap-3 mb-4">
+
+        @foreach (var item in new[] {
+            new { Hora = "08:00", Ampm = "AM", Dias = "Lun – Dom", Porcion = "80g", Activo = true, Mascota = "Buddy 🐕" },
+            new { Hora = "01:00", Ampm = "PM", Dias = "Lun – Dom", Porcion = "80g", Activo = true, Mascota = "Buddy 🐕" },
+            new { Hora = "07:00", Ampm = "PM", Dias = "Lun – Dom", Porcion = "80g", Activo = false, Mascota = "Buddy 🐕" },
+            new { Hora = "09:00", Ampm = "AM", Dias = "Sáb – Dom", Porcion = "40g", Activo = true, Mascota = "Mila 🐈" },
+        })
+        {
+            <div class="pf-card d-flex align-items-center gap-3" style="@(!item.Activo ? "opacity:.55;" : "")">
+                <div class="text-center flex-shrink-0" style="width:3.5rem;">
+                    <div class="fw-black" style="font-size:1.2rem;line-height:1;">@item.Hora</div>
+                    <div class="text-muted" style="font-size:.7rem;">@item.Ampm</div>
+                </div>
+                <div class="flex-grow-1">
+                    <div class="fw-semibold small">@item.Mascota</div>
+                    <div class="text-muted" style="font-size:.7rem;">@item.Dias · @item.Porcion</div>
+                </div>
+                <div class="form-check form-switch mb-0">
+                    <input class="form-check-input" type="checkbox" @(item.Activo ? "checked" : "") style="cursor:pointer;" />
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Historial rápido -->
+    <h6 class="fw-bold mb-3">Última alimentación</h6>
+    <div class="pf-card d-flex align-items-center gap-3">
+        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+             style="width:2.5rem;height:2.5rem;background:var(--pf-primary-light);">
+            <i class="bi bi-check-circle-fill" style="color:var(--pf-primary);"></i>
+        </div>
+        <div class="flex-grow-1">
+            <div class="fw-semibold small">08:00 AM — Buddy 🐕</div>
+            <div class="text-muted" style="font-size:.7rem;">80g dispensados correctamente</div>
+        </div>
+        <span class="text-muted" style="font-size:.7rem;">Hace 1h</span>
+    </div>
+
+</div>
