@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PawFeeder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dcd834fc8fd235e067d60af5576005ca00e4efc9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89db2ea3a0badba53b382d5edf6778f9e6f011cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("PawFeeder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PawFeeder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

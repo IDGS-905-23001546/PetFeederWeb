@@ -33,5 +33,20 @@ namespace PawFeeder.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        [HttpGet("DownloadApp")]
+        public IActionResult DownloadApp()
+        {
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "downloads", "pawfeeder.apk");
+            
+            if (!System.IO.File.Exists(filePath))
+            {
+                return NotFound("El archivo de la aplicación no se encuentra disponible en este momento.");
+            }
+
+            string contentType = "application/vnd.android.package-archive";
+
+            return PhysicalFile(filePath, contentType, "pawfeeder.apk");
+        }
     }
 }
+   

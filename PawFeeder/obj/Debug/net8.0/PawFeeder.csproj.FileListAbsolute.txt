@@ -32,3 +32,37 @@ C:\Users\PcDell\OneDrive\Escritorio\IDGS905\ARQUITECTURA\PawFeeder\PawFeeder\obj
 C:\Users\PcDell\OneDrive\Escritorio\IDGS905\ARQUITECTURA\PawFeeder\PawFeeder\obj\Debug\net8.0\PawFeeder.genruntimeconfig.cache
 C:\Users\PcDell\OneDrive\Escritorio\IDGS905\ARQUITECTURA\PawFeeder\PawFeeder\obj\Debug\net8.0\ref\PawFeeder.dll
 C:\Users\PcDell\OneDrive\Escritorio\IDGS905\ARQUITECTURA\PawFeeder\PawFeeder\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\bin\Debug\net8.0\appsettings.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\bin\Debug\net8.0\PawFeeder.staticwebassets.runtime.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\bin\Debug\net8.0\PawFeeder.staticwebassets.endpoints.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\bin\Debug\net8.0\PawFeeder.exe
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\bin\Debug\net8.0\PawFeeder.deps.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\bin\Debug\net8.0\PawFeeder.runtimeconfig.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\bin\Debug\net8.0\PawFeeder.dll
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\bin\Debug\net8.0\PawFeeder.pdb
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\PawFeeder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\PawFeeder.AssemblyInfoInputs.cache
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\PawFeeder.AssemblyInfo.cs
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\PawFeeder.csproj.CoreCompileInputs.cache
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\PawFeeder.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\PawFeeder.RazorAssemblyInfo.cache
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\PawFeeder.RazorAssemblyInfo.cs
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\PawFeeder.sourcelink.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\scopedcss\bundle\PawFeeder.styles.css
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\scopedcss\projectbundle\PawFeeder.bundle.scp.css
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\PawFeeder.dll
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\refint\PawFeeder.dll
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\PawFeeder.pdb
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\PawFeeder.genruntimeconfig.cache
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\ref\PawFeeder.dll
+C:\Users\Paola Gonzalez\source\repos\PetFeederWeb\PawFeeder\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
