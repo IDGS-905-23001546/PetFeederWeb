@@ -1,1 +1,60 @@
-[]
+[
+  {
+    "ContainingType": "PawFeeder.Controllers.MascotasController",
+    "Method": "RegistrarMascota",
+    "RelativePath": "api/Mascotas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "modelo",
+        "Type": "PawFeeder.Models.Mascota",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PawFeeder.Controllers.MascotasController",
+    "Method": "EliminarMascota",
+    "RelativePath": "api/Mascotas/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PawFeeder.Controllers.MascotasController",
+    "Method": "GetMascotasPorUsuario",
+    "RelativePath": "api/Mascotas/usuario/{usuarioId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PawFeeder.Controllers.HomeController",
+    "Method": "DownloadApp",
+    "RelativePath": "DownloadApp",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

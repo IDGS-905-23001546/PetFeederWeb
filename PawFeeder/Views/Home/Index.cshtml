@@ -2,7 +2,6 @@
     ViewData["Title"] = "Inicio";
 }
 
-<!-- ── Hero ── -->
 <section class="pf-hero">
     <div class="container-xl">
         <div class="row align-items-center g-5">
@@ -16,7 +15,7 @@
                     PawFeeder es un dispensador inteligente de croquetas controlado por IoT. Programa horarios, ajusta porciones y monitorea a tu mascota en tiempo real.
                 </p>
                 <div class="d-flex flex-wrap gap-3">
-                    <a asp-controller="Account" asp-action="Register" class="btn-pf text-decoration-none">
+                    <a asp-controller="Home" asp-action="DownloadApp" class="btn-pf text-decoration-none">
                         <i class="bi bi-download me-2"></i>Comenzar gratis
                     </a>
                     <a asp-controller="Home" asp-action="About" class="btn-pf-outline text-decoration-none">
@@ -45,7 +44,6 @@
     </div>
 </section>
 
-<!-- ── Características ── -->
 <section class="pf-section" id="features">
     <div class="container-xl">
         <div class="text-center mb-5">
@@ -102,7 +100,6 @@
     </div>
 </section>
 
-<!-- ── Dispositivo ── -->
 <section style="background:#fff; padding:5rem 0;">
     <div class="container-xl">
         <div class="row align-items-center g-5">
@@ -111,7 +108,7 @@
             </div>
             <div class="col-lg-7">
                 <div class="pf-section-label">El hardware</div>
-                <h2 class="fw-bold fs-1 mb-3">Tecnología Arduino<br/>al servicio de tu mascota</h2>
+                <h2 class="fw-bold fs-1 mb-3">Tecnología Arduino<br />al servicio de tu mascota</h2>
                 <div class="pf-divider"></div>
                 <p class="text-muted mb-4">
                     El corazón de PawFeeder es un microcontrolador Arduino con módulo WiFi, sensor ultrasónico de nivel y un servo motor de precisión para controlar las porciones.
@@ -150,13 +147,12 @@
     </div>
 </section>
 
-<!-- ── CTA ── -->
 <section id="download" style="background:linear-gradient(135deg,#16a34a,#22c55e); padding:5rem 0; color:#fff;">
     <div class="container-xl text-center">
         <img src="~/images/pawfeeder-mark.png" alt="PawFeeder" style="height:4rem;margin-bottom:1.5rem;filter:brightness(0) invert(1);" />
         <h2 class="fw-bold fs-1 mb-3">¿Listo para empezar?</h2>
         <p class="mb-5 opacity-75 fs-5 mx-auto" style="max-width:460px;">
-            Crea tu cuenta gratis y comienza a programar las comidas de tu mascota hoy mismo.
+            Crea tu cuenta gratis, descarga la aplicación y comienza a programar las comidas de tu mascota hoy mismo.
         </p>
         <div class="d-flex justify-content-center flex-wrap gap-3">
             <a asp-controller="Account" asp-action="Register"
@@ -164,9 +160,9 @@
                style="color:var(--pf-primary-dark);">
                 <i class="bi bi-person-plus me-2"></i>Crear cuenta
             </a>
-            <a asp-controller="Account" asp-action="Login"
+            <a asp-controller="Home" asp-action="DownloadApp"
                class="text-decoration-none px-5 py-3 fw-semibold rounded-pill border border-white text-white">
-                Iniciar sesión
+                <i class="bi bi-download me-2"></i>Descargar App
             </a>
         </div>
     </div>
