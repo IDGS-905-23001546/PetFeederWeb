@@ -1,5 +1,4 @@
 wwwroot\css\site.css
-wwwroot\downloads\pawfeeder.apk
 wwwroot\favicon.ico
 wwwroot\images\auth-bg.jpg
 wwwroot\images\pawfeeder-logo.png
@@ -64,3 +63,4 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\downloads\pawfeeder.apk
