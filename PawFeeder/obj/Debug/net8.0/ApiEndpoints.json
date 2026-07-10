@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "PawFeeder.Controllers.CotizacionController",
+    "Method": "EnviarCotizacion",
+    "RelativePath": "api/Cotizacion/enviar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PawFeeder.Models.CotizacionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PawFeeder.Controllers.MascotasController",
     "Method": "RegistrarMascota",
     "RelativePath": "api/Mascotas",
