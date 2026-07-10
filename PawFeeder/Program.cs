@@ -1,6 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using PawFeeder.Data;
 
+using Microsoft.EntityFrameworkCore;
+using PawFeeder.Data;
+using PawFeeder.Models;
+using PawFeeder.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("PetFeederConnection");
@@ -10,6 +15,11 @@ builder.Services.AddDbContext<PawFeederContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("EmailSettings"));
+
+builder.Services.AddScoped<EmailService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
