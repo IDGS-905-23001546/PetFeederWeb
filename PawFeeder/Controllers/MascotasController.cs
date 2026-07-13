@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PawFeeder.Data;
-using PawFeeder.Models; // <-- IMPORTANTE: Esta línea debe estar aquí arriba
+using PawFeeder.Models; 
 
 namespace PawFeeder.Controllers
 {
@@ -9,17 +9,14 @@ namespace PawFeeder.Controllers
     [Route("api/[controller]")]
     public class MascotasController : ControllerBase
     {
-        // El resto del código de tu controlador se queda igual...
         private readonly PawFeederContext _context;
 
-        // Inyectamos el contexto de la base de datos que configuramos
         public MascotasController(PawFeederContext context)
         {
             _context = context;
         }
 
-        // 1. GET: api/Mascotas/usuario/1
-        // Obtiene todas las mascotas vinculadas a un usuario específico
+        // 1. GET:
         [HttpGet("usuario/{usuarioId:int}")]
         public async Task<IActionResult> GetMascotasPorUsuario(int usuarioId)
         {
@@ -30,35 +27,62 @@ namespace PawFeeder.Controllers
             return Ok(mascotas);
         }
 
-        // 2. POST: api/Mascotas
-        // Guarda una nueva mascota en la base de datos
+        // 2. POST:
         [HttpPost]
-        public async Task<IActionResult> RegistrarMascota([FromBody] Mascota modelo)
+        public async Task<ActionResult<Mascota>> PostMascota([FromBody] Mascota mascota) // <-- IMPORTANTE EL [FromBody]
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            // Forzamos las fechas de creación para mantener el estándar de tu BD
-            // Nota: En tu modelo 'MascotaModel' actual asegúrate de incluir las propiedades necesarias
-            _context.Mascotas.Add(modelo);
+            _context.Mascotas.Add(mascota);
             await _context.SaveChangesAsync();
 
-            return Ok(new { mensaje = "¡Mascota registrada con éxito!", id = modelo.Id });
+            return CreatedAtAction("GetMascota", new { id = mascota.Id }, mascota);
         }
 
-        // 3. DELETE: api/Mascotas/5
-        // Eliminación física (o puedes cambiar el campo 'Activa' a false para borrado lógico)
-        [HttpDelete("{id:int}")]
-        public async Task<IActionResult> EliminarMascota(int id)
+        // PUT
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutMascota(int id, [FromBody] Mascota mascota)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("ID de mascota inválido.");
+            }
+
+            mascota.Id = id;
+
+            _context.Entry(mascota).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Mascotas.Any(e => e.Id == id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent(); 
+        }
+
+        // DELETE
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteMascota(int id)
         {
             var mascota = await _context.Mascotas.FindAsync(id);
             if (mascota == null)
-                return NotFound(new { mensaje = "Mascota no encontrada." });
+            {
+                return NotFound();
+            }
 
             _context.Mascotas.Remove(mascota);
             await _context.SaveChangesAsync();
 
-            return Ok(new { mensaje = "Mascota eliminada correctamente de la base de datos." });
+            return NoContent();
         }
     }
 }
