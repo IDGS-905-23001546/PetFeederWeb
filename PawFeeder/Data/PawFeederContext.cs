@@ -13,6 +13,8 @@ namespace PawFeeder.Data
         public DbSet<Mascota> Mascotas { get; set; }
         public DbSet<Dispensador> Dispensadores { get; set; }
         public DbSet<HistorialAlimentacion> HistorialAlimentaciones { get; set; }
+        public DbSet<Horario> Horarios { get; set; }
+        public DbSet<Opinion> Opiniones { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,6 +24,8 @@ namespace PawFeeder.Data
             modelBuilder.Entity<Mascota>().ToTable("mascotas");
             modelBuilder.Entity<Dispensador>().ToTable("dispensadores");
             modelBuilder.Entity<HistorialAlimentacion>().ToTable("dispensaciones");
+            modelBuilder.Entity<Horario>().ToTable("horarios");
+            modelBuilder.Entity<Opinion>().ToTable("opiniones");
         }
     }
 }
