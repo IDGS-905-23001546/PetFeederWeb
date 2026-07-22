@@ -5,18 +5,50 @@ namespace PawFeeder.Models
     public class Dispensador
     {
         [Key]
-        public string Id { get; set; } = string.Empty; // Ej. PW-ARD-905X
+        public int Id { get; set; }
+
 
         [Required]
-        public string UsuarioId { get; set; } = string.Empty;
+        public int UsuarioId { get; set; }
 
-        // Monitoreo: Nivel de comida en porcentaje (calculado por el sensor ultrasónico)
-        [Range(0, 100)]
-        public int NivelAlimentoPorcentaje { get; set; }
 
         [Required]
-        public string Estado { get; set; } = "Activo"; // Activo, Inactivo, Mantenimiento
+        public string Nombre { get; set; } = string.Empty;
 
-        public DateTime UltimaConexion { get; set; } = DateTime.Now;
+
+        [Required]
+        public string CodigoUnico { get; set; } = string.Empty;
+
+
+        public string FirmwareVersion { get; set; } = "v1.0.0";
+
+
+        public string Estado { get; set; } = "offline";
+
+
+        public int BateriaPercent { get; set; }
+
+
+        public int NivelTolvaPct { get; set; }
+
+
+        public string? SsidWifi { get; set; }
+
+
+        public bool Activo { get; set; } = true;
+
+
+        public DateTime? LastPingAt { get; set; }
+
+
+        public DateTime CreatedAt { get; set; }
+
+
+        public DateTime UpdatedAt { get; set; }
+
+
+
+        // Relación Usuario
+        public Usuario? Usuario { get; set; }
     }
 }
