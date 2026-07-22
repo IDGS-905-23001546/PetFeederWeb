@@ -26,10 +26,12 @@ namespace PawFeeder.Models
         public string Estado { get; set; } = "offline";
 
 
-        public int BateriaPercent { get; set; }
+        // Cambiar de int a byte
+        public byte BateriaPercent { get; set; }
 
 
-        public int NivelTolvaPct { get; set; }
+        // Cambiar de int a byte
+        public byte NivelTolvaPct { get; set; }
 
 
         public string? SsidWifi { get; set; }
@@ -48,7 +50,6 @@ namespace PawFeeder.Models
 
 
 
-        // Relación Usuario
         public Usuario? Usuario { get; set; }
     }
 }
