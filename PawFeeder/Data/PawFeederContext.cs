@@ -37,5 +37,8 @@ namespace PawFeeder.Data
                 .OnDelete(DeleteBehavior.Cascade);
 
         }
+        public DbSet<Componente> Componentes { get; set; }
+        public DbSet<ProductoTerminado> InventarioProductos { get; set; }
+        public DbSet<RecetaProducto> RecetasProducto { get; set; }
     }
 }
