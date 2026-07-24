@@ -1,31 +1,41 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PawFeeder.Models; // <-- Asegúrate de que apunte a tu carpeta de modelos real
+using PawFeeder.Models;
 
 namespace PawFeeder.Data
 {
     public class PawFeederContext : DbContext
     {
-        public PawFeederContext(DbContextOptions<PawFeederContext> options) : base(options)
+        public PawFeederContext(
+            DbContextOptions<PawFeederContext> options
+        ) : base(options)
         {
+
         }
 
-        // Apuntamos a las clases reales de tu carpeta Models
-        public DbSet<Mascota> Mascotas { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }
+
         public DbSet<Dispensador> Dispensadores { get; set; }
-        public DbSet<HistorialAlimentacion> HistorialAlimentaciones { get; set; }
+
+        public DbSet<Mascota> Mascotas { get; set; }
+
         public DbSet<Horario> Horarios { get; set; }
+
         public DbSet<Opinion> Opiniones { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+        protected override void OnModelCreating(
+            ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Mapeo exacto a tus tablas en minúsculas de SQL Server
-            modelBuilder.Entity<Mascota>().ToTable("mascotas");
-            modelBuilder.Entity<Dispensador>().ToTable("dispensadores");
-            modelBuilder.Entity<HistorialAlimentacion>().ToTable("dispensaciones");
-            modelBuilder.Entity<Horario>().ToTable("horarios");
-            modelBuilder.Entity<Opinion>().ToTable("opiniones");
+
+            modelBuilder.Entity<Dispensador>()
+                .HasOne(d => d.Usuario)
+                .WithMany(u => u.Dispensadores)
+                .HasForeignKey(d => d.UsuarioId)
+                .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }
