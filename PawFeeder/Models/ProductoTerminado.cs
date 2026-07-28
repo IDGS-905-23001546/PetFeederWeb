@@ -17,5 +17,8 @@ namespace PawFeeder.Models
         [Required]
         [Column("stock")]
         public int Stock { get; set; }
+
+        [Column("estado")]
+        public string? Estado { get; set; }
     }
 }
