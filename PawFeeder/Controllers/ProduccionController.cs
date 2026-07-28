@@ -59,6 +59,20 @@ namespace PawFeeder.Controllers
 
                 producto.Stock += cantidadAFabricar;
 
+                // Crear registros individuales en dispensadores_inventario
+                for (int i = 0; i < cantidadAFabricar; i++)
+                {
+                    var codigo = $"PF-{producto.Id}-{DateTime.Now:yyyyMMddHHmmss}-{i + 1}";
+                    var dispensador = new DispensadorInventario
+                    {
+                        ProductoId = productoId,
+                        CodigoUnico = codigo,
+                        Estado = "Pendiente",
+                        CreadoEn = DateTime.Now
+                    };
+                    _context.DispensadoresInventario.Add(dispensador);
+                }
+
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
 
