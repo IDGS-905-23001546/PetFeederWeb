@@ -132,5 +132,37 @@ namespace PawFeeder.Controllers
             return NoContent();
         }
 
+        [HttpPut("{id}/estado")]
+        public async Task<IActionResult> CambiarEstado(
+    int id,
+    [FromBody] EstadoUsuarioRequest request)
+        {
+
+            var usuario =
+                await _context.Usuarios.FindAsync(id);
+
+
+
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+
+
+            usuario.Activo = request.Activo;
+
+
+            await _context.SaveChangesAsync();
+
+
+
+            return Ok(new
+            {
+                mensaje = "Estado actualizado"
+            });
+
+        }
+
     }
 }
