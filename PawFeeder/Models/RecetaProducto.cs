@@ -24,5 +24,8 @@ namespace PawFeeder.Models
 
         [Column("cantidad_requerida")]
         public int CantidadRequerida { get; set; }
+
+        [Column("dispensador")]
+        public string? Dispensador { get; set; }
     }
 }

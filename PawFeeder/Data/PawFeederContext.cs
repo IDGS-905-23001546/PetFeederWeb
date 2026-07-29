@@ -41,5 +41,6 @@ namespace PawFeeder.Data
         public DbSet<ProductoTerminado> InventarioProductos { get; set; }
         public DbSet<RecetaProducto> RecetasProducto { get; set; }
         public DbSet<DispensadorInventario> DispensadoresInventario { get; set; }
+        public DbSet<Proveedor> Proveedores { get; set; }
     }
 }
