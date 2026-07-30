@@ -31,6 +31,9 @@ namespace PawFeeder.Models
         public bool Activo { get; set; }
 
 
+        public string Rol { get; set; } = "cliente";
+
+
 
         public DateTime CreatedAt { get; set; }
 
