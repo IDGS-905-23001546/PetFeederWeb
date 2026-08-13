@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PawFeeder.Data;
+using PawFeeder.Models;
 using PawFeeder.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,13 +10,22 @@ var connectionString =
 
 
 // ================================
-// CONEXI�N SQL SERVER + EF CORE
+// CONEXI�N SQL SERVER + EF CORE
 // ================================
 builder.Services.AddDbContext<PawFeederContext>(options =>
 {
     options.UseSqlServer(connectionString)
            .UseSnakeCaseNamingConvention();
 });
+
+
+// ================================
+// CORREO ELECTR�NICO
+// ================================
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("EmailSettings"));
+
+builder.Services.AddSingleton<EmailService>();
 
 
 // MVC + API
@@ -63,7 +73,10 @@ if (app.Environment.IsDevelopment())
 }
 
 
-app.UseHttpsRedirection();
+// Nota: la redirección HTTPS se desactiva porque rompe el CORS del frontend
+// local (localhost:4200) al redirigir 5169 -> 7122 con certificado no confiable.
+// En producción se recomienda servir solo HTTPS a nivel del host/proxy.
+// app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
