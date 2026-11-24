@@ -38,13 +38,17 @@ builder.Services.AddSwaggerGen();
 
 
 // ================================
-// CORS ANGULAR
+// CORS ANGULAR / FRONTEND
 // ================================
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins(
+                "http://localhost:4200",
+                "http://localhost:4000",
+                "http://localhost:5173",
+                "https://pawfeeder-web.onrender.com")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });

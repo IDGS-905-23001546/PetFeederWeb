@@ -37,9 +37,11 @@ namespace PawFeeder.Services
     _emailSettings.Port,
     SecureSocketOptions.SslOnConnect);
 
+            var password = (_emailSettings.Password ?? string.Empty).Replace(" ", string.Empty);
+
             await smtp.AuthenticateAsync(
                 _emailSettings.Username,
-                _emailSettings.Password);
+                password);
 
             await smtp.SendAsync(email);
 

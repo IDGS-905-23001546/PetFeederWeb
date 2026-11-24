@@ -40,6 +40,9 @@ namespace PawFeeder.Controllers
             if (!BCrypt.Net.BCrypt.Verify(request.Password, usuario.PasswordHash))
                 return Unauthorized(new { mensaje = "Credenciales inv\u00e1lidas" });
 
+            if (!usuario.Verificado)
+                return Unauthorized(new { mensaje = "Tu cuenta aún no está verificada. Revisa tu correo para el código de verificación." });
+
             return Ok(ToDto(usuario));
         }
 
